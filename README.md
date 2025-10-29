@@ -13,7 +13,7 @@ Continguts que conté el document:
 This project is part of the *Multimedia and User Interfaces* course.  
 It consists of designing and developing a **personal CV webpage** using **Figma (design phase)** and **HTML + CSS (implementation phase)**.
 
-## 👤 Project analysis — User profile
+## Project analysis — User profile
 
 The target user for this website is a **computer engineering student** who wants to showcase their education, skills, and personal projects in a clear and professional way.  
 The website is intended to serve both as an **online CV** and as a **portfolio** that can be shared with teachers, potential employers, or collaborators.
@@ -26,7 +26,7 @@ The website is intended to serve both as an **online CV** and as a **portfolio**
 - **Frustrations:** Traditional CVs feel outdated and limited; he prefers a clean and responsive online format.  
 - **Needs:** A personal website that works on all devices, with intuitive navigation and visual consistency.
 
-## 🧭 Project analysis — Information architecture
+## Project analysis — Information architecture
 
 The structure of my CV website is modern and interactive, allowing the user to move quickly between sections through smooth internal links.
 The layout follows the logic of a traditional curriculum vitae but presented in a digital, accessible, and visually dynamic way.
@@ -50,22 +50,19 @@ Contact, including my GitHub, LinkedIn, and email address to make communication 
 
 The entire structure was designed to be simple, intuitive, and fast to navigate while keeping a professional and elegant dark-theme style that contrasts light text and blue accent colors.
 
-## 🎨 Project analysis — Visual design
+## Project analysis — Visual design
 
-The visual design follows a **modern, dark-theme aesthetic** inspired by developer portfolios.  
-Colors and styles were chosen to emphasize readability, visual hierarchy, and a professional look.
+For this project, I created a modern and interactive structure that feels dynamic and easy to navigate.
+I wanted the design to look professional but also attractive, so I chose a dark color palette that gives the page a clean and elegant appearance.
+The contrast between the dark background and the white text, combined with light blue elements, makes the content easier to read and highlights the important parts of the page such as buttons or section titles.
 
-**Main design decisions:**
-- **Color palette:** Dark blue-gray background (`#0f172a`) with light text (`#e5e7eb`) and cyan accent (`#38bdf8`) to highlight interactive elements.  
-- **Typography:** Sans-serif system font (`system-ui`) for clarity and compatibility across devices.  
-- **Layout:** A centered, responsive grid with consistent padding and spacing.  
-- **Sections:** Separated with subtle horizontal gradient lines for smooth visual flow.  
-- **Buttons and interactions:** Rounded buttons with hover effects and smooth transitions to give feedback and a dynamic feel.  
-- **Accessibility:** Clear focus states (`outline`) and smooth scroll behavior for better usability.  
-- **Consistency:** The same visual system from the Figma design was implemented in HTML and CSS to ensure coherence between design and final website.
+The general structure follows the idea of ​​a real CV, but with a digital and more visual format.
+At the top, there is a header with all the navigation links that let users move through the different sections of the site smoothly.
+The main section includes my full name, a short description about me, my photograph, and two buttons — one to view my projects and another one to download the CV in PDF format.
+Each section is organized clearly, with enough spacing and small design details like hover effects and horizontal lines that separate the content and make the reading experience more pleasant.
 
-This design creates a minimalist but elegant portfolio that aligns with the student’s professional and academic profile.
+Overall, the visual design combines a professional and minimalist style with small interactive touches that make the page modern, functional, and appealing.
 
 ## Figma
-Enllaç públic per poder editar el meu projecte del figma: https://www.figma.com/design/4nxHwdbyrnHCbfi9AMTGQH/Curriculum?node-id=0-1&t=G5a25XoxCY4J0AKq-1
+Public link to edit my figma project: https://www.figma.com/design/4nxHwdbyrnHCbfi9AMTGQH/Curriculum?node-id=0-1&t=G5a25XoxCY4J0AKq-1
 
