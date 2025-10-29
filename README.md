@@ -28,21 +28,43 @@ The website is intended to serve both as an **online CV** and as a **portfolio**
 
 ## 🧭 Project analysis — Information architecture
 
-The structure of the page follows a **simple single-page layout** where all the content is divided into clear and scrollable sections:
+The structure of my CV website is modern and interactive, allowing the user to move quickly between sections through smooth internal links.
+The layout follows the logic of a traditional curriculum vitae but presented in a digital, accessible, and visually dynamic way.
 
-1. **Header / Navigation bar** — Fixed at the top with links to each section.  
-2. **Hero section** — Includes name, brief description, and buttons (“View projects” and “Download CV”).  
-3. **About me** — A short self-introduction highlighting academic focus and professional goals.  
-4. **Skills** — A list of technical abilities (HTML, CSS, Java, GitHub, Figma...).  
-5. **Experience** — Real working experiences: plumbing assistant in the family business, pizza delivery driver, and basketball coach.  
-6. **Education** — Academic path from ESO to university.  
-7. **Projects** — List of university and personal projects with GitHub links.  
-8. **Contact** — Email and GitHub link.  
-9. **Footer** — Copyright and year.
+The website starts with a fixed header that contains the main navigation links, giving direct access to each section of the page.
+The hero section includes my full name, a short one-line personal description, a photograph, and two action buttons: one to view my projects (useful for employers who want to see my work) and another to download the CV in PDF format.
 
-This structure keeps navigation intuitive and reduces cognitive load for the user.  
-All content is accessible without changing pages, which reinforces simplicity and usability.  
-The architecture mirrors the logic of a modern responsive CV/portfolio.
+After that, the page is divided into several sections that represent the main areas of a complete CV:
+
+About me, where I describe my goals, interests, and personal motivation.
+
+Skills, listing the technical abilities and knowledge I have developed during my studies and work experience.
+
+Experience, summarizing my professional background and the different jobs I have done.
+
+Education, showing my academic path.
+
+Projects, with a short description and direct GitHub links for each project.
+
+Contact, including my GitHub, LinkedIn, and email address to make communication easy.
+
+The entire structure was designed to be simple, intuitive, and fast to navigate while keeping a professional and elegant dark-theme style that contrasts light text and blue accent colors.
+
+## 🎨 Project analysis — Visual design
+
+The visual design follows a **modern, dark-theme aesthetic** inspired by developer portfolios.  
+Colors and styles were chosen to emphasize readability, visual hierarchy, and a professional look.
+
+**Main design decisions:**
+- **Color palette:** Dark blue-gray background (`#0f172a`) with light text (`#e5e7eb`) and cyan accent (`#38bdf8`) to highlight interactive elements.  
+- **Typography:** Sans-serif system font (`system-ui`) for clarity and compatibility across devices.  
+- **Layout:** A centered, responsive grid with consistent padding and spacing.  
+- **Sections:** Separated with subtle horizontal gradient lines for smooth visual flow.  
+- **Buttons and interactions:** Rounded buttons with hover effects and smooth transitions to give feedback and a dynamic feel.  
+- **Accessibility:** Clear focus states (`outline`) and smooth scroll behavior for better usability.  
+- **Consistency:** The same visual system from the Figma design was implemented in HTML and CSS to ensure coherence between design and final website.
+
+This design creates a minimalist but elegant portfolio that aligns with the student’s professional and academic profile.
 
 ## Figma
 Enllaç públic per poder editar el meu projecte del figma: https://www.figma.com/design/4nxHwdbyrnHCbfi9AMTGQH/Curriculum?node-id=0-1&t=G5a25XoxCY4J0AKq-1
