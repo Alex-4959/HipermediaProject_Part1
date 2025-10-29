@@ -1,0 +1,288 @@
+/* ==========================================================================
+   CV — Àlex Cimbron Morales
+   Objectiu: disseny fosc, modern i molt llegible amb tocs d'interacció
+   He mantingut la simplicitat: una sola pàgina amb seccions clares i ancoratges
+   ========================================================================== */
+
+/* ---------- Variables de tema ----------
+   He triat paleta fosca per un look professional i contrast alt.
+   El cian serveix d'accent per destacar elements interactius.
+*/
+:root {
+  --bg: #0f172a;
+  --panel: #111827;
+  --text: #e5e7eb;
+  --muted: #94a3b8;
+  --primary: #38bdf8;  /* accent */
+  --container: 1100px;
+}
+
+/* ---------- Resets bàsics ----------
+   Treballo amb l'espai controlat i tipografia coherent a tots els navegadors.
+*/
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+html { scroll-behavior: smooth; } /* vull scroll suau entre seccions */
+
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: linear-gradient(180deg, var(--bg), #030712); /* degradat subtil de fons */
+  line-height: 1.6; /* millora la llegibilitat de paràgrafs */
+}
+
+/* ---------- Contenidor central ----------
+   Ample màxim per evitar línies massa llargues i padding lateral per respir.
+*/
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* ---------- Header enganxat ----------
+   Header translúcid amb blur: dona sensació d’app moderna.
+   Z-index per sobre del contingut i línia inferior per separar visualment.
+*/
+.site-header {
+  position: sticky; top: 0;
+  z-index: 50;
+  backdrop-filter: blur(8px);
+  background: rgba(3, 7, 18, 0.6);
+  border-bottom: 1px solid #1f2937;
+}
+/* Fallback si el navegador no suporta blur */
+@supports not (backdrop-filter: blur(8px)) {
+  .site-header { background: rgba(3,7,18,.85); }
+}
+
+/* ---------- Navegació ----------
+   Barra simple, espaiada i amb subratllat animat a hover/focus per feedback.
+*/
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+.logo {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 700; /* vull que el nom pesi a la jerarquia */
+}
+.menu {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.menu a {
+  position: relative; /* necessari per al subratllat animat */
+  color: var(--muted);
+  text-decoration: none;
+}
+.menu a:hover { color: var(--text); }
+/* subratllat minimal que creix a hover/focus */
+.menu a::after {
+  content: "";
+  position: absolute; left: 0; bottom: -6px;
+  width: 0; height: 2px; background: var(--primary);
+  transition: width .18s ease;
+}
+.menu a:hover::after, .menu a:focus-visible::after { width: 100%; }
+
+/* ---------- Hero ----------
+   Foto, nom i CTA. Gradients tous al fons per volum sense soroll visual.
+*/
+.hero {
+  padding: 72px 0 48px;
+  background:
+    radial-gradient(600px 200px at 20% 0%, rgba(56,189,248,.15), transparent 60%),
+    radial-gradient(600px 200px at 80% 10%, rgba(56,189,248,.08), transparent 60%);
+}
+.hero-inner {
+  display: grid;
+  grid-template-columns: 140px 1fr; /* avatar + informació */
+  gap: 24px;
+  align-items: center;
+}
+.avatar {
+  width: 140px; height: 140px; border-radius: 50%;
+  object-fit: cover; border: 2px solid #1f2937;
+  /* glow suau per donar presència a la foto sense fer-la cridanera */
+  box-shadow: 0 0 0 2px #1f2937, 0 0 24px rgba(56,189,248,.15);
+}
+.lead { color: var(--muted); margin: .25rem 0 1rem; }
+
+h1 {
+  /* mides fluides perquè es vegi bé a totes les pantalles */
+  font-size: clamp(28px, 3.6vw, 40px);
+  line-height: 1.15;
+  margin: 0 0 .5rem;
+}
+
+/* ---------- Botons ----------
+   Pastilla amb accent. Interaccions ràpides (hover/active) i focus accessible.
+*/
+.btn {
+  display: inline-block;
+  padding: .6rem 1rem;
+  border-radius: 999px;
+  text-decoration: none;
+  background: var(--primary);
+  color: #02141a;
+  font-weight: 600;
+  transition: transform .12s ease, box-shadow .12s ease, background-color .12s ease, color .12s ease, border-color .12s ease;
+}
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(2, 20, 26, 0.35);
+}
+.btn:active { transform: translateY(0); filter: brightness(.98); }
+.btn:focus-visible { box-shadow: 0 0 0 3px rgba(56,189,248,.35); outline: none; }
+.btn.outline {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid #334155; /* borde discret fins que hi ha hover */
+}
+.btn.outline:hover { border-color: #38bdf8; color: #38bdf8; }
+.btn.small { padding: .4rem .75rem; font-size: .9rem; }
+
+/* ---------- Seccions ----------
+   Padding vertical per ritme; separador amb gradient per marcar el canvi de tema.
+*/
+.section {
+  padding: 48px 0;
+  position: relative; /* per poder col·locar el separador ::before */
+}
+/* separador subtil entre seccions (línia amb toc d’accent) */
+.section + .section { margin-top: 8px; }
+.section + .section::before {
+  content: "";
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    #1f2937 12%,
+    #38bdf8 20%,
+    #1f2937 28%,
+    transparent 100%
+  );
+  opacity: .8;
+}
+
+/* ---------- Títols de secció ----------
+   Subratllat curt com a recurs de jerarquia i consistència visual.
+*/
+.section h2 {
+  font-size: clamp(20px, 2.4vw, 28px);
+  margin: 0 0 18px;
+  position: relative;
+  display: inline-block;
+}
+.section h2::after {
+  content: "";
+  position: absolute; left: 0; bottom: -8px;
+  width: 64px; height: 3px;
+  background: linear-gradient(90deg, #38bdf8, rgba(56,189,248,0));
+  border-radius: 3px;
+}
+
+/* ---------- Textos i llistes ----------
+   Amplada màxima per no fer línies quilomètriques (millor lectura).
+*/
+p, .list { max-width: 70ch; }
+.list { padding-left: 1rem; }
+.list li { margin: .35rem 0; }
+
+/* ---------- Tags (skills) ----------
+   Etiquetes rodones per visualitzar habilitats de forma compacta.
+*/
+.tags {
+  display: flex; flex-wrap: wrap; gap: .5rem;
+  padding: 0; list-style: none;
+}
+.tags li {
+  background: #0b1220;
+  border: 1px solid #1f2937;
+  padding: .35rem .6rem;
+  border-radius: 999px;
+}
+
+/* ---------- Targetes (experiència/projectes) ----------
+   Superfícies lleugerament elevades, amb hover suau i focus accessible.
+*/
+.card {
+  background: #0b1220;
+  border: 1px solid #1f2937;
+  border-radius: 16px;
+  padding: 16px;
+  margin: 12px 0;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.card header {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 1rem;
+}
+.card h3 { margin: 0; }
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(2, 8, 23, 0.5);
+  border-color: #334155;
+}
+.card:focus-within {
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 3px rgba(56,189,248,.25);
+}
+
+/* ---------- Grid de projectes ----------
+   3 columnes a desktop; reduiré a 2 i 1 amb media queries.
+*/
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px; /* una mica més d’aire entre targetes */
+}
+
+/* ---------- Footer ----------
+   Separació amb línia i color de text atenuat: tanca el recorregut de lectura.
+*/
+.site-footer {
+  border-top: 1px solid #1f2937;
+  padding: 24px 0;
+  color: var(--muted);
+}
+
+/* ---------- Ancoratges ----------
+   Deixo marge superior perquè el header enganxat no tapi els títols quan faig scroll.
+*/
+[id] { scroll-margin-top: 84px; }
+
+/* ---------- Selecció de text ----------
+   Detall estètic per mantenir el tema d’accent quan l’usuari selecciona text.
+*/
+::selection { background: rgba(56,189,248,.25); color: var(--text); }
+
+/* ---------- Accessibilitat/moviment ----------
+   Respecto usuaris que prefereixin menys animacions.
+*/
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+  html { scroll-behavior: auto; }
+}
+
+/* ---------- Responsive ----------
+   Ajusto el grid i la capçalera per a tablets/mòbils i centro el hero.
+*/
+@media (max-width: 1024px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .hero-inner { grid-template-columns: 1fr; text-align: center; }
+  .grid { grid-template-columns: 1fr; }
+  .menu { display: none; } /* menú simple al mòbil (evito sobrecàrrega) */
+}
+@media (max-width: 640px) {
+  .section h2::after { width: 48px; } /* subratllat una mica més curt a mòbil */
+}
