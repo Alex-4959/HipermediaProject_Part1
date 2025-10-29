@@ -20,7 +20,7 @@ The website is intended to serve both as an **online CV** and as a **portfolio**
 
 **User Persona example:**
 - **Name:** Alex Cimbron Morales  
-- **Age:** 21  
+- **Age:** 20  
 - **Occupation:** Third-year Computer Engineering student at the University of Girona  
 - **Goals:** Present his academic background, experience, and programming projects in a modern and interactive format.  
 - **Frustrations:** Traditional CVs feel outdated and limited; he prefers a clean and responsive online format.  
